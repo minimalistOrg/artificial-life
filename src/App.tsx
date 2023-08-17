@@ -1,7 +1,9 @@
+import { Canvas } from './Canvas'
+
 import './App.css'
 
 function App() {
-  return <></>;
+  return <Canvas />
 }
 
 export default App
