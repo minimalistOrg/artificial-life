@@ -1,13 +1,12 @@
 import { useEffect, useRef } from "react"
+import { drawBarnsleyFern } from "./utils/barnsleyFern"
 
 export const Canvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const draw = (canvasContext: CanvasRenderingContext2D) => {
-    canvasContext.fillStyle = '#000000'
-    canvasContext.beginPath()
-    canvasContext.arc(50, 100, 20, 0, 2 * Math.PI)
-    canvasContext.fill()
+    canvasContext.fillStyle = '#4caf50'
+    drawBarnsleyFern({ canvasContext, iterations: 40000})
   }
 
   useEffect(() => {
@@ -22,5 +21,5 @@ export const Canvas = () => {
     }
   }, [])
 
-  return <canvas ref={canvasRef} />
+  return <canvas width={1200} height={800} ref={canvasRef} />
 }
